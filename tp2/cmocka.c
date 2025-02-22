@@ -27,7 +27,7 @@
 #include <inttypes.h>
 #endif
 
-#ifdef HAVE_SIGNAL_H
+#ifndef HAVE_SIGNAL_H
 #include <signal.h>
 #endif
 
