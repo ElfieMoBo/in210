@@ -75,6 +75,6 @@ int main(void){
         cmocka_unit_test(assertTrue),
         cmocka_unit_test(inflim_tourist),
     };
- //   cmocka_set_message_output(CM_OUTPUT_XML);
+   cmocka_set_message_output(CM_OUTPUT_XML);
     return cmocka_run_group_tests_name("TEST", tests, setup, teardown);
 }
