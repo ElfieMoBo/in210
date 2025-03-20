@@ -16,25 +16,33 @@ static void null_test_success(void **state){
 /* Testing equality on two floats (1) */
 static void inf12_notourist(void **state){
     (void) state;
-    assert_float_equal(0.6, computePrice(11,0), 0.001);
+    assert_float_equal(1.5/2, computePrice(11,0), 0.001);
 }
 static void inf12_tourist(void **state){
     (void) state;
-    assert_float_equal(1.2, computePrice(11,1), 0.001);
+    assert_float_equal(1.5, computePrice(11,1), 0.001);
+}
+static void eq12_notourist(void **state){
+    (void) state;
+    assert_float_equal(1.5/2, computePrice(12,0), 0.001);
+}
+static void eq12_tourist(void **state){
+    (void) state;
+    assert_float_equal(1.5, computePrice(12,1), 0.001);
 }
 static void sup12_notourist(void **state){
     (void) state;
-    assert_float_equal(1.2, computePrice(23,0), 0.001);
+    assert_float_equal(1.5, computePrice(23,0), 0.001);
 }
 static void sup12_tourist(void **state){
     (void) state;
-    assert_float_equal(2.4, computePrice(23,1), 0.001);
+    assert_float_equal(1.5*2, computePrice(23,1), 0.001);
 }
 
 /* Testing equality on two floats (2) */
 static void assertTrue(void **state){
     (void) state;
-    assert_true(computePrice(11,0)==0.6f); // 0.6 is seen as a float
+    assert_true(computePrice(11,0)==1.5f); // 0.6 is seen as a float
 }
 
 /* Creating set up and tear down */
@@ -54,11 +62,11 @@ void recupAge(int* ageLimit){
     function_called();
     *ageLimit = (int)mock();
 }
-static void inflim_tourist(void **state){
+static void inflim_notourist(void **state){
     (void) state;
     expect_function_calls(recupAge, 1);
     will_return(recupAge, 14);
-    assert_float_equal(0.6, computePriceLim(10,0), 0.001);
+    assert_float_equal(1.5/2, computePriceLim(10,0), 0.001);
 }
 
 
@@ -70,10 +78,12 @@ int main(void){
         cmocka_unit_test(null_test_success),
         cmocka_unit_test(inf12_notourist),
         cmocka_unit_test(inf12_tourist),
+        cmocka_unit_test(eq12_notourist),
+        cmocka_unit_test(eq12_tourist),
         cmocka_unit_test(sup12_notourist),
         cmocka_unit_test(sup12_tourist),
         cmocka_unit_test(assertTrue),
-        cmocka_unit_test(inflim_tourist),
+        cmocka_unit_test(inflim_notourist),
     };
  //   cmocka_set_message_output(CM_OUTPUT_XML);
     return cmocka_run_group_tests_name("TEST", tests, setup, teardown);
