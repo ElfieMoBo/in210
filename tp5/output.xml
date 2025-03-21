@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.3 on linux)" generated="2025-03-14T11:38:02.960504" rpa="false" schemaversion="5">
+<suite id="s1" name="Tp5" source="/home/elfie/ensta/ensta2a/in210/tp5">
+<suite id="s1-s1" name="Helloworld" source="/home/elfie/ensta/ensta2a/in210/tp5/helloworld.robot">
+<test id="s1-s1-t1" name="test hello" line="2">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Hello World!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-14T11:38:02.981892" elapsed="0.000208"/>
+</kw>
+<status status="PASS" start="2025-03-14T11:38:02.981306" elapsed="0.001086"/>
+</test>
+<test id="s1-s1-t2" name="test keyword" line="5">
+<kw name="display">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${item}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-14T11:38:02.983594" elapsed="0.000168"/>
+</kw>
+<kw name="RETURN good:">
+<msg time="2025-03-14T11:38:02.984485" level="FAIL">No keyword with name 'RETURN good:' found.</msg>
+<arg>${item}</arg>
+<status status="FAIL" start="2025-03-14T11:38:02.984449" elapsed="0.000076">No keyword with name 'RETURN good:' found.</status>
+</kw>
+<var>${loc}</var>
+<arg>bye</arg>
+<status status="FAIL" start="2025-03-14T11:38:02.983250" elapsed="0.001390">No keyword with name 'RETURN good:' found.</status>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${loc}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-03-14T11:38:02.984846" elapsed="0.000020"/>
+</kw>
+<status status="FAIL" start="2025-03-14T11:38:02.982622" elapsed="0.002421">No keyword with name 'RETURN good:' found.</status>
+</test>
+<status status="FAIL" start="2025-03-14T11:38:02.980323" elapsed="0.005058"/>
+</suite>
+<status status="FAIL" start="2025-03-14T11:38:02.961185" elapsed="0.024625"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tp5" id="s1" pass="1" fail="1" skip="0">Tp5</stat>
+<stat name="Helloworld" id="s1-s1" pass="1" fail="1" skip="0">Tp5.Helloworld</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
